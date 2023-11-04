@@ -1,1 +1,17 @@
 .vs/
+
+   # Виключення для Visual Studio
+   *.suo
+   *.user
+   *.sdf
+   *.dbmdl
+   *.dbproj.user
+   *.sln.docstates
+
+   # Виключення для Xcode
+   .DS_Store
+   xcuserdata
+
+   # Виключення для різних компіляційних систем
+   Debug/
+   Release/
