@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include "Apartment.h"
 #include "HotelRoom.h"
+#include "ApartmentBase.h"
 using namespace std;
 
 int main()
@@ -12,4 +13,9 @@ int main()
 
 	HotelRoom a;
 	a.Print();
+
+	cout << endl;
+
+	ApartmentBase b;
+	b.Print();
 }
