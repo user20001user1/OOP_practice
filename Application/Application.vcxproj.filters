@@ -32,5 +32,11 @@
     <ClInclude Include="ApartmentBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MyBaseClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyDerivedClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

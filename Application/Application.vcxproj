@@ -134,6 +134,8 @@
     <ClInclude Include="Apartment.h" />
     <ClInclude Include="ApartmentBase.h" />
     <ClInclude Include="HotelRoom.h" />
+    <ClInclude Include="MyBaseClass.h" />
+    <ClInclude Include="MyDerivedClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
