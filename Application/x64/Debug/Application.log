@@ -1,4 +1,7 @@
-﻿  Application.cpp
+﻿  Apartment.cpp
+  Generating Code...
+  Compiling...
+  Application.cpp
 C:\Users\Ярослав\Desktop\Git\Application\Application\Application.cpp(8,7): error C2679: binary '>>': no operator found which takes a right-hand operand of type 'Apartment' (or there is no acceptable conversion)
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\istream(299,39): message : could be 'std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(std::basic_streambuf<char,std::char_traits<char>> *)'
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\istream(295,39): message : or       'std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(void *&)'
@@ -101,3 +104,4 @@ C:\Users\Ярослав\Desktop\Git\Application\Application\Application.cpp(10,7
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xstring(5360,32): message : or       'std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::basic_string<_Elem,_Traits,_Alloc> &)'
 C:\Users\Ярослав\Desktop\Git\Application\Application\Application.cpp(10,7): message : 'std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::basic_string<_Elem,_Traits,_Alloc> &)': could not deduce template argument for 'const std::basic_string<_Elem,_Traits,_Alloc> &' from 'Apartment'
 C:\Users\Ярослав\Desktop\Git\Application\Application\Application.cpp(10,7): message : while trying to match the argument list '(std::ostream, Apartment)'
+  Generating Code...

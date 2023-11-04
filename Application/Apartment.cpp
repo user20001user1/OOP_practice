@@ -84,5 +84,17 @@ ostream& operator<<(ostream& out, const Apartment& apartment) {
     return out;
 }
 
+// Оператор порівняння "==" для класу Apartment
+bool operator==(const Apartment& lhs, const Apartment& rhs) {
+    return lhs.id == rhs.id &&
+        lhs.number == rhs.number &&
+        lhs.area == rhs.area &&
+        lhs.floor == rhs.floor &&
+        lhs.rooms == rhs.rooms &&
+        strcmp(lhs.street, rhs.street) == 0 &&
+        lhs.sunnySide == rhs.sunnySide &&
+        lhs.corner == rhs.corner;
+}
+
 
 
