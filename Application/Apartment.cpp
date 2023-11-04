@@ -71,4 +71,18 @@ istream& operator>>(istream& in, Apartment& apartment) {
     return in;
 }
 
+// Оператор виводу об'єкта в потік
+ostream& operator<<(ostream& out, const Apartment& apartment) {
+    out << "ID: " << apartment.id << endl;
+    out << "Номер квартири: " << apartment.number << endl;
+    out << "Площа: " << apartment.area << endl;
+    out << "Поверх: " << apartment.floor << endl;
+    out << "Кількість кімнат: " << apartment.rooms << endl;
+    out << "Вулиця: " << apartment.street << endl;
+    out << "Сонячна сторона: " << (apartment.sunnySide ? "Так" : "Ні") << endl;
+    out << "Кутова квартира: " << (apartment.corner ? "Так" : "Ні") << endl;
+    return out;
+}
+
+
 
