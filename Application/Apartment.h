@@ -10,7 +10,7 @@ public:
     // Деструктор
     ~Apartment();
 
-private:
+public:
     int id;
     int number;
     double area;

@@ -1,6 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "Apartment.h"
 #include <cstring>
+#include <iostream>
+using namespace std;
 
 // Реалізація конструкторів
 Apartment::Apartment() {
@@ -45,3 +47,28 @@ Apartment::Apartment(const Apartment& other) {
 Apartment::~Apartment() {
     // Порожній деструктор, бо немає виділеної пам'яті
 }
+
+// Оператор зчитування об'єкту з консольного потоку
+istream& operator>>(istream& in, Apartment& apartment) {
+    cout << "Введіть дані для квартири:" << endl;
+    cout << "ID: ";
+    in >> apartment.id;
+    cout << "Номер квартири: ";
+    in >> apartment.number;
+    cout << "Площа: ";
+    in >> apartment.area;
+    cout << "Поверх: ";
+    in >> apartment.floor;
+    cout << "Кількість кімнат: ";
+    in >> apartment.rooms;
+    cout << "Вулиця: ";
+    in.ignore();  // Для очищення буфера перед введенням рядка
+    in.getline(apartment.street, 100);
+    cout << "Сонячна сторона (1 - так, 0 - ні): ";
+    in >> apartment.sunnySide;
+    cout << "Кутова квартира (1 - так, 0 - ні): ";
+    in >> apartment.corner;
+    return in;
+}
+
+
