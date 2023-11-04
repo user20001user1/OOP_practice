@@ -28,6 +28,19 @@ Apartment::Apartment(int id, int number, double area, int floor, int rooms, cons
     this->corner = corner;
 }
 
+// Реалізація конструктора копіювання
+Apartment::Apartment(const Apartment& other) {
+    id = other.id;
+    number = other.number;
+    area = other.area;
+    floor = other.floor;
+    rooms = other.rooms;
+    strncpy(street, other.street, 99);
+    street[99] = '\0';
+    sunnySide = other.sunnySide;
+    corner = other.corner;
+}
+
 // Реалізація деструктора
 Apartment::~Apartment() {
     // Порожній деструктор, бо немає виділеної пам'яті
