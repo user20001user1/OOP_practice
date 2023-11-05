@@ -11,7 +11,6 @@
 #include "ApartmentBase.h"
 #include "MyDerivedClass.h"
 #include "Vector.h"
-#include "MyBaseClass.h"
 using namespace std;
 
 void createObjectsAndCallMethod() {
