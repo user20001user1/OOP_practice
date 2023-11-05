@@ -1,2 +1,4 @@
 ﻿  Application.cpp
+C:\Users\Ярослав\Desktop\Git\Application\Application\Application.cpp(76,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  LINK : C:\Users\Ярослав\Desktop\Git\Application\x64\Debug\Application.exe not found or not built by the last incremental link; performing full link
   Application.vcxproj -> C:\Users\Ярослав\Desktop\Git\Application\x64\Debug\Application.exe

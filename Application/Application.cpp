@@ -1,5 +1,7 @@
 ﻿#include <iostream>
+#include <vector>
 #include <Windows.h>
+#include <algorithm>
 #include "Apartment.h"
 #include "HotelRoom.h"
 #include "ApartmentBase.h"
@@ -46,7 +48,7 @@ int main()
 
     createObjectsAndCallMethod();*/
 
-    Vector<int> intVector;
+    /*Vector<int> intVector;
     intVector.push_back(1);
     intVector.push_back(2);
     intVector.push_back(3);
@@ -69,6 +71,42 @@ int main()
     }
     cout << endl;
 
+    return 0;*/
+
+    srand(time(nullptr));
+
+    vector<int> oddNumbers;
+    vector<int> evenNumbers;
+
+    // Fill the vectors with random numbers
+    for (int i = 0; i < 10; ++i) {
+        int randomNumber = rand() % 100;
+        if (randomNumber % 2 == 0) {
+            evenNumbers.push_back(randomNumber);
+        }
+        else {
+            oddNumbers.push_back(randomNumber);
+        }
+    }
+
+    // Sort the vectors
+    sort(oddNumbers.begin(), oddNumbers.end());
+    sort(evenNumbers.begin(), evenNumbers.end());
+
+    // Print the contents of the vectors
+    cout << "Odd Numbers: ";
+    for (int number : oddNumbers) {
+        cout << number << " ";
+    }
+    cout << endl;
+
+    cout << "Even Numbers: ";
+    for (int number : evenNumbers) {
+        cout << number << " ";
+    }
+    cout << endl;
+
     return 0;
+
 }
 
