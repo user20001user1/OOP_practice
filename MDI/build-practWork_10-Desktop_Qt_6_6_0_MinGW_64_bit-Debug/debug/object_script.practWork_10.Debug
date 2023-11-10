@@ -1,0 +1,14 @@
+debug/Apartment.o
+debug/HotelRoom.o
+debug/House.o
+debug/createapartment.o
+debug/createhotelroom.o
+debug/main.o
+debug/mainwindow.o
+debug/showapartment.o
+debug/showhotelroom.o
+debug/moc_createapartment.o
+debug/moc_createhotelroom.o
+debug/moc_mainwindow.o
+debug/moc_showapartment.o
+debug/moc_showhotelroom.o
