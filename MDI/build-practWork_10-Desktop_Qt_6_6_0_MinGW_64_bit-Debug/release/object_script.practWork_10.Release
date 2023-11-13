@@ -1,6 +1,7 @@
 release/Apartment.o
 release/HotelRoom.o
 release/House.o
+release/Logger.o
 release/createapartment.o
 release/createhotelroom.o
 release/main.o

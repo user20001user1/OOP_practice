@@ -26,8 +26,11 @@ void CreateApartment::on_confirmDocPb_clicked()
     else if (ui->rbSideNo->isChecked())sunnySide = false;
     if(ui->rbCornerNo->isChecked()) corner = true;
     else if (ui->rbCornerYes->isChecked())corner = false;
+
+    try{
     if(ui->lnId->text().isEmpty() || ui->lnAppNum->text().isEmpty() || ui->lnArea->text().isEmpty() || ui->lnFloor->text().isEmpty() || ui->lnRooms->text().isEmpty() || ui->lnStreet->text().isEmpty()){
         QMessageBox::warning(this, "Error", "Empty fields");
+        throw std::runtime_error("Fields are empty in Apartments object");
     }
     else {
         Apartment apart;
@@ -47,6 +50,9 @@ void CreateApartment::on_confirmDocPb_clicked()
             QMessageBox::warning(this, "Error", "Error with the database!");
         }
     }
+}catch(const std::runtime_error &e){
+    qWarning()<<"Exception in creating: "<<e.what();
+}
 }
 
 

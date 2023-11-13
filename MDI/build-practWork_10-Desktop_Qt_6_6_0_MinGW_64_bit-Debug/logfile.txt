@@ -1,0 +1,8 @@
+13-11-2023 20:10:48 |  Debug   | 125 | sqlite.cpp | insertIntoApart | Error insert to Apartments table: 
+
+13-11-2023 20:10:48 | Critical | 129 | sqlite.cpp | insertIntoApart | Exception in inserting:  Error inserting to Apartments table
+
+13-11-2023 20:10:52 | Warning  | 54 | createapartment.cpp | on_confirmDocPb_clicked | Exception in creating:  Fields are empty in Apartments object
+
+13-11-2023 20:11:04 | Warning  | 54 | createhotelroom.cpp | on_confirmHotelPb_clicked | Exception in creating:  Fields are empty in HotelRoom object
+

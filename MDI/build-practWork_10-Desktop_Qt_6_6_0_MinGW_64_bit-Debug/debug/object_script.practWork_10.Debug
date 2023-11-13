@@ -1,6 +1,7 @@
 debug/Apartment.o
 debug/HotelRoom.o
 debug/House.o
+debug/Logger.o
 debug/createapartment.o
 debug/createhotelroom.o
 debug/main.o

@@ -4,6 +4,7 @@
 #include <QtSql/QSqlTableModel>
 #include "Apartment.h"
 #include "HotelRoom.h"
+#include "Logger.h"
 
 class DBManager
 {

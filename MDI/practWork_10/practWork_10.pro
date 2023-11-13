@@ -12,6 +12,7 @@ SOURCES += \
     Apartment.cpp \
     HotelRoom.cpp \
     House.cpp \
+    Logger.cpp \
     createapartment.cpp \
     createhotelroom.cpp \
     main.cpp \
@@ -24,6 +25,7 @@ HEADERS += \
     Apartment.h \
     HotelRoom.h \
     House.h \
+    Logger.h \
     createapartment.h \
     createhotelroom.h \
     db.h \

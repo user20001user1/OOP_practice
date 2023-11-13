@@ -100,8 +100,9 @@ bool SqliteDBManager::createTables()
 
 bool SqliteDBManager::insertIntoApart(Apartment& apart)
 {
+        try{
         QSqlQuery query;
-        query.prepare("INSERT INTO " TABLE_APART " ("
+        query.prepare("INSRT INTO " TABLE_APART " ("
                       TABLE_ID ", "
                       TABLE_NUMBER ", "
                       TABLE_AREA ", "
@@ -121,14 +122,20 @@ bool SqliteDBManager::insertIntoApart(Apartment& apart)
         query.bindValue(":corner", apart.getCorner());
 
         if (!query.exec()) {
-        qDebug() << "Error in insert to Apartment table: "; return false;
+        qDebug() << "Error insert to Apartments table: ";
+        throw std::runtime_error("Error inserting to Apartments table");
         } else return true;
+}catch(const std::exception &e){
+        qCritical()<<"Exception in inserting: "<<e.what();
+        return false;
+}
 }
 
 bool SqliteDBManager::insertIntoHotel(HotelRoom& hotel)
 {
+        try{
     QSqlQuery query;
-                query.prepare("INSERT INTO " TABLE_HOTEL " ("
+                query.prepare("INSER INTO " TABLE_HOTEL " ("
                               TABLE_ID ", "
                               TABLE_NUMBER ", "
                               TABLE_AREA ", "
@@ -149,8 +156,13 @@ bool SqliteDBManager::insertIntoHotel(HotelRoom& hotel)
                 query.bindValue(":bar", hotel.getBar());
                 query.bindValue(":cleaning", hotel.getCleaning());
 
-        if (!query.exec()) {
-        qDebug() << "Error in insert to HotelRoom table: "; return false;
-    } else return true;
+                if (!query.exec()) {
+        qDebug() << "Error insert to HotelRooms table: ";
+        throw std::runtime_error("Error insert to HotelRooms table");
+                } else return true;
+}catch(const std::exception &e){
+                qCritical()<<"Exception in inserting: "<<e.what();
+                return false;
+}
 }
 
