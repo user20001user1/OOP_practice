@@ -29,9 +29,25 @@ void CreateHotelRoom::on_confirmHotelPb_clicked()
 
     if(ui->lnId->text().isEmpty() || ui->lnAppNum->text().isEmpty() || ui->lnArea->text().isEmpty() || ui->lnFloor->text().isEmpty() || ui->lnRooms->text().isEmpty() || ui->lnStreet->text().isEmpty() || ui->lnDayPrice->text().isEmpty()){
         QMessageBox::warning(this, "Error", "Empty fields");
-    } else {
-        hotel = new HotelRoom(id.toInt(), number.toInt(), area.toDouble(), floor.toInt(), rooms.toInt(), street.toStdString(), dayPrice.toInt(), bar, cleaning);
-        emit hotelCreated(hotel);
+    }     else {
+        HotelRoom hotel;
+        hotel.setId(id.toInt());
+        hotel.setNumber(id.toInt());
+        hotel.setArea(area.toDouble());
+        hotel.setFloor(floor.toInt());
+        hotel.setRooms(rooms.toInt());
+        hotel.setStreet(street.toStdString());
+        hotel.setDayPrice(dayPrice.toInt());
+        hotel.setBar(bar);
+        hotel.setCleaning(cleaning);
+        if (db->insertIntoHotel(hotel)) {
+             QMessageBox::information(this, "Success", "Created object");
+        }
+
+    else {
+        QMessageBox::warning(this, "Error", "Error with the database!");
     }
+}
+
 }
 

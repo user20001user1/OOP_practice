@@ -13,6 +13,8 @@
 #include "Apartment.h"
 #include "HotelRoom.h"
 #include "createapartment.h"
+#include "sqlite.h"
+
 
 namespace Ui {
 class CreateHotelRoom;
@@ -26,17 +28,15 @@ public:
     explicit CreateHotelRoom(QWidget *parent = nullptr);
     ~CreateHotelRoom();
 
-signals:
-    void hotelCreated(HotelRoom*);
-
 private slots:
     void on_confirmHotelPb_clicked();
 
 private:
     Ui::CreateHotelRoom *ui;
-    HotelRoom* hotel;
     QString id, number, area, floor, rooms, street, dayPrice;
     bool bar, cleaning;
+    DBManager *db;
+    QSqlTableModel  *model;
 };
 
 #endif // CREATEHOTELROOM_H

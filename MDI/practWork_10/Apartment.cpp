@@ -25,5 +25,37 @@ std::string Apartment::getStreet() { return House::getStreet(); }
 bool Apartment::getSunnySide(){return sunnySide;}
 bool Apartment::getCorner(){return corner;}
 
+void Apartment::setId(int id) {
+    House::setId(id);
+}
+
+void Apartment::setNumber(int number) {
+    House::setNumber(number);
+}
+
+void Apartment::setArea(double area) {
+    House::setArea(area);
+}
+
+void Apartment::setFloor(int floor) {
+    House::setFloor(floor);
+}
+
+void Apartment::setRooms(int rooms) {
+    House::setRooms(rooms);
+}
+
+void Apartment::setStreet(std::string street) {
+    House::setStreet(street);
+}
+
+void Apartment::setSunnySide(bool sunnySide) {
+    this->sunnySide = sunnySide;
+}
+
+void Apartment::setCorner(bool corner) {
+    this->corner = corner;
+}
+
 Apartment::~Apartment() {
 }

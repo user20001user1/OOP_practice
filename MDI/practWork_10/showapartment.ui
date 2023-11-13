@@ -13,22 +13,11 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QListWidget" name="listWidgetApart">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>549</width>
-     <height>482</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Bahnschrift SemiLight SemiConde</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-  </widget>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QTableView" name="apartTableView"/>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

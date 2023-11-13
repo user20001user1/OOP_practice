@@ -15,6 +15,7 @@ CreateApartment::~CreateApartment()
 
 void CreateApartment::on_confirmDocPb_clicked()
 {
+    SqliteDBManager* db= SqliteDBManager::getInstance();
     id = ui->lnId->text();
     number = ui->lnAppNum->text();
     area = ui->lnArea->text();
@@ -29,9 +30,24 @@ void CreateApartment::on_confirmDocPb_clicked()
         QMessageBox::warning(this, "Error", "Empty fields");
     }
     else {
-        apart = new Apartment(id.toInt(), number.toInt(), area.toDouble(), floor.toInt(), rooms.toInt(), street.toStdString(), sunnySide, corner);
-        emit apartCreated(apart);
+        Apartment apart;
+        apart.setId(id.toInt());
+        apart.setNumber(id.toInt());
+        apart.setArea(area.toDouble());
+        apart.setFloor(floor.toInt());
+        apart.setRooms(rooms.toInt());
+        apart.setStreet(street.toStdString());
+        apart.setSunnySide(sunnySide);
+        apart.setCorner(corner);
+
+        if (db->insertIntoApart(apart)) {
+            QMessageBox::information(this, "Success", "Created object");
+
+        } else {
+            QMessageBox::warning(this, "Error", "Error with the database!");
+        }
+    }
 }
-}
+
 
 

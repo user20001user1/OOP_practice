@@ -12,27 +12,30 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QListWidget>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QTableView>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_ShowHotelRoom
 {
 public:
-    QListWidget *listWidgetHotel;
+    QHBoxLayout *horizontalLayout;
+    QTableView *hotelTableView;
 
     void setupUi(QDialog *ShowHotelRoom)
     {
         if (ShowHotelRoom->objectName().isEmpty())
             ShowHotelRoom->setObjectName("ShowHotelRoom");
         ShowHotelRoom->resize(608, 549);
-        listWidgetHotel = new QListWidget(ShowHotelRoom);
-        listWidgetHotel->setObjectName("listWidgetHotel");
-        listWidgetHotel->setGeometry(QRect(30, 30, 549, 482));
-        QFont font;
-        font.setFamilies({QString::fromUtf8("Bahnschrift SemiLight SemiConde")});
-        font.setPointSize(14);
-        listWidgetHotel->setFont(font);
+        horizontalLayout = new QHBoxLayout(ShowHotelRoom);
+        horizontalLayout->setObjectName("horizontalLayout");
+        hotelTableView = new QTableView(ShowHotelRoom);
+        hotelTableView->setObjectName("hotelTableView");
+
+        horizontalLayout->addWidget(hotelTableView);
+
 
         retranslateUi(ShowHotelRoom);
 

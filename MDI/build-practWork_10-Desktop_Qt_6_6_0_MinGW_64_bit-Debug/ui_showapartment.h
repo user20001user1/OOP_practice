@@ -12,27 +12,30 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QListWidget>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QTableView>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_ShowApartment
 {
 public:
-    QListWidget *listWidgetApart;
+    QHBoxLayout *horizontalLayout;
+    QTableView *apartTableView;
 
     void setupUi(QDialog *ShowApartment)
     {
         if (ShowApartment->objectName().isEmpty())
             ShowApartment->setObjectName("ShowApartment");
         ShowApartment->resize(616, 637);
-        listWidgetApart = new QListWidget(ShowApartment);
-        listWidgetApart->setObjectName("listWidgetApart");
-        listWidgetApart->setGeometry(QRect(20, 20, 549, 482));
-        QFont font;
-        font.setFamilies({QString::fromUtf8("Bahnschrift SemiLight SemiConde")});
-        font.setPointSize(14);
-        listWidgetApart->setFont(font);
+        horizontalLayout = new QHBoxLayout(ShowApartment);
+        horizontalLayout->setObjectName("horizontalLayout");
+        apartTableView = new QTableView(ShowApartment);
+        apartTableView->setObjectName("apartTableView");
+
+        horizontalLayout->addWidget(apartTableView);
+
 
         retranslateUi(ShowApartment);
 

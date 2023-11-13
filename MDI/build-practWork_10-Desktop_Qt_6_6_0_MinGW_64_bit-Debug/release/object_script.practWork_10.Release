@@ -7,6 +7,7 @@ release/main.o
 release/mainwindow.o
 release/showapartment.o
 release/showhotelroom.o
+release/sqlite.o
 release/moc_createapartment.o
 release/moc_createhotelroom.o
 release/moc_mainwindow.o

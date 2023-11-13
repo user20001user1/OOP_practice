@@ -7,6 +7,7 @@ debug/main.o
 debug/mainwindow.o
 debug/showapartment.o
 debug/showhotelroom.o
+debug/sqlite.o
 debug/moc_createapartment.o
 debug/moc_createhotelroom.o
 debug/moc_mainwindow.o

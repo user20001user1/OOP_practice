@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,20 +17,20 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     showapartment.cpp \
-    showhotelroom.cpp
+    showhotelroom.cpp \
+    sqlite.cpp
 
 HEADERS += \
-    ../../../../../Users/sanya/OneDrive/Рабочий стол/merge/Apartment.h \
-    ../../../../../Users/sanya/OneDrive/Рабочий стол/merge/HotelRoom.h \
-    ../../../../../Users/sanya/OneDrive/Рабочий стол/merge/House.h \
     Apartment.h \
     HotelRoom.h \
     House.h \
     createapartment.h \
     createhotelroom.h \
+    db.h \
     mainwindow.h \
     showapartment.h \
-    showhotelroom.h
+    showhotelroom.h \
+    sqlite.h
 
 FORMS += \
     createapartment.ui \

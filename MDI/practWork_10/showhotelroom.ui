@@ -13,22 +13,11 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QListWidget" name="listWidgetHotel">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>30</y>
-     <width>549</width>
-     <height>482</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Bahnschrift SemiLight SemiConde</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-  </widget>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QTableView" name="hotelTableView"/>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

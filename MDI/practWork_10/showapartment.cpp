@@ -13,15 +13,42 @@ ShowApartment::~ShowApartment()
     delete ui;
 }
 
-QListWidget* ShowApartment::getListWidget() {
-    return (ui->listWidgetApart);
+void ShowApartment::setupModel(const QString &tableName, const QStringList &headers)
+{
+    SqliteDBManager* db= SqliteDBManager::getInstance();
+    model = new QSqlTableModel(this, db->getDB());
+    model->setTable(tableName);
+    for(int i = 0, j = 0; i < model->columnCount(); i++, j++){
+        model->setHeaderData(i, Qt::Horizontal, headers[j]);
+    }
+    model->setSort(0,Qt::AscendingOrder);
 }
 
 
-void ShowApartment::setList(const QVector<Apartment *> &apartments){
-    for (Apartment* app : apartments) {
-        QListWidgetItem* item = new QListWidgetItem(ui->listWidgetApart);
-        item->setText(QString::fromStdString(app->getStreet()));
-        item->setData(Qt::UserRole, QVariant::fromValue(app));
-    }
+void ShowApartment::createUI()
+{
+    ui->apartTableView->setModel(model);
+    ui->apartTableView->setColumnHidden(0, true);
+    ui->apartTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->apartTableView->setSelectionMode(QAbstractItemView::SingleSelection);
+    ui->apartTableView->resizeColumnsToContents();
+    ui->apartTableView->setEditTriggers(QAbstractItemView::DoubleClicked);
+    ui->apartTableView->horizontalHeader()->setStretchLastSection(true);
+
+    model->select();
+}
+
+void ShowApartment::setList(){
+    this->setupModel(TABLE_APART,
+                     QStringList() << tr("ID")
+                                   << tr("Number")
+                                   << tr("Area")
+                                   << tr("Floor")
+                                   << tr("Rooms")
+                                   << tr("Street")
+                                   << tr("Sunny Side")
+                                   << tr("Corner Apartment")
+                     );
+
+    this->createUI();
 }

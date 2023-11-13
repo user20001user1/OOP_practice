@@ -23,12 +23,15 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
+class QSqlTableModel;
+class DBManager;
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(DBManager* dbManager, QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -36,25 +39,17 @@ private slots:
 
     void on_createHotelPb_clicked();
 
-    void on_apartCreated(Apartment *);
-
-    void on_hotelCreated(HotelRoom *);
-
     void on_showApartmentPb_clicked();
 
     void on_showHotelPb_clicked();
 
     void on_exitPb_clicked();
 
-    void on_itemAppDoubleClicked(QListWidgetItem* item);
-
-    void on_itemHotelDoubleClicked(QListWidgetItem* item);
-
 private:
     Ui::MainWindow *ui;
     ShowApartment *showApp;
     ShowHotelRoom *showHotel;
-    QVector<Apartment*> apartments;
-    QVector<HotelRoom*> hotelRooms;
+    DBManager *db;
+    QSqlTableModel  *model;
 };
 #endif // MAINWINDOW_H

@@ -25,5 +25,14 @@ public:
     std::string getStreet() override;
     bool getSunnySide();
     bool getCorner();
+    void setId(int id) override;
+    void setNumber(int number) override;
+    void setArea(double area) override;
+    void setFloor(int floor) override;
+    void setRooms(int rooms) override;
+    void setStreet(std::string street) override;
+    void setSunnySide(bool sunnySide);
+    void setCorner(bool corner);
+
    ~Apartment();
 };

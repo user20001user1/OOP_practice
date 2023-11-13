@@ -22,5 +22,11 @@ public:
     virtual int getFloor();
     virtual int getRooms();
     virtual std::string getStreet();
+    virtual void setId(int id);
+    virtual void setNumber(int number);
+    virtual void setArea(double area);
+    virtual void setFloor(int floor);
+    virtual void setRooms(int rooms);
+    virtual void setStreet(std::string street);
     virtual ~House();
 };

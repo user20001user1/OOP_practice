@@ -23,5 +23,14 @@ public:
     int getDayPrice();
     bool getBar();
     bool getCleaning();
+    void setId(int id) override;
+    void setNumber(int number) override;
+    void setArea(double area) override;
+    void setFloor(int floor) override;
+    void setRooms(int rooms) override;
+    void setStreet(std::string street) override;
+    void setDayPrice(int dayPrice);
+    void setBar(bool bar);
+    void setCleaning(bool cleaning);
    ~HotelRoom();
 };
